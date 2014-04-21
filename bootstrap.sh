@@ -13,7 +13,7 @@ else
 fi
 
 # Install (or update if exists) zsh.syntax-highlighting
-if [ ! -d "~/.oh-my-zshi/custom/plugins/zsh-syntax-highlighting" ]; then
+if [ ! -d "~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
 	git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zshi/custom/plugins/zsh-syntax-highlighting
 else
 	cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
