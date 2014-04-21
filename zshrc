@@ -100,7 +100,7 @@ setopt pushdminus
 
 
 
-# kphoen.zsh-theme
+# jovenitto.zsh-theme
 
 if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
     PROMPT='
