@@ -11,7 +11,7 @@ else
 	git pull
 	cd ~
 fi
-echo "Done."
+echo "Done pulling."
 
 
 # Install (or update if exists) zsh.syntax-highlighting
@@ -24,27 +24,19 @@ else
 	git pull
 	cd ~
 fi
-echo "Done."
+echo "Done pulling."
 
 
 # simlink files
 
-if [ ! -h ~/.zshrc ]; then
-        echo .zshrc is not a link. Deleting and linking to repo...
-	rm -rf ~/.zshrc
-	ln -s ~/.dotfiles/zshrc ~/.zshrc
-else
-        echo .zshrc is a link. Nothing to do.
-fi
-echo "Done."
-
-if [ ! -h ~/.vimrc ]; then
-    echo .vimrc is not a link. Deleting and linking to repo...
-    rm -rf ~/.vimrc
-    ln -s ~/.dotfiles/vimrc ~/.vimrc
-else
-    echo .vimrc is a link. Nothing to do.
-fi
-echo "Done."
-
+for file in zshrc vimrc
+do
+    if [ ! -h ~/.$file ]; then
+        echo .$file is not a link. Deleting and linking to repo.
+	    echo rm -rf ~/.$file
+	    echo ln -s ~/.dotfiles/$file ~/.$file
+    else
+        echo .$file is a link. Nothing to do.
+    fi
+done
 
