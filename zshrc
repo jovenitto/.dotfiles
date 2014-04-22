@@ -110,7 +110,7 @@ if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
 %{$fg[yellow]%}[%{$reset_color%}%n@%m%{$fg[yellow]%}]%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}%~%{$reset_color%} %# '
     else
         PROMPT='
-%{$fg[green]%}[%n@%m]%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}%~%{$reset_color%} %# '
+%{$fg[magenta]%}[%n@%m]%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}%~%{$reset_color%} %# '
     fi
 
     ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[green]%}"
