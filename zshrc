@@ -110,7 +110,7 @@ if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
 %{$fg[yellow]%}[%{$reset_color%}%n@%m%{$fg[yellow]%}]%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}%~%{$reset_color%} %# '
     else
         PROMPT='
-%{$fg[yellow]%}[%{$reset_color%}%n@%{$fg[red]%}%m%{$reset_color%}%{$fg[yellow]%}]%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}%~%{$reset_color%} %# '
+%{$fg[yellow]%}[%{$reset_color%}{$fg[green]%}%n@%m%{$reset_color%}%{$fg[yellow]%}]%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}%~%{$reset_color%} %# '
     fi
 
 
