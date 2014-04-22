@@ -5,7 +5,7 @@ echo Checking repos...
 #update .dotfiles (git pull)
 echo \ --\> Pulling .dotfiles
 cd ~/.dotfiles
-git pull &> /dev/null &
+git pull > /dev/null 
 cd ~
 
 # Path to your oh-my-zsh installation.
