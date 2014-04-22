@@ -28,7 +28,7 @@ echo "Done pulling."
 
 
 # simlink files
-
+echo Simlinking files...
 for file in zshrc vimrc
 do
     if [ ! -h ~/.$file ]; then
