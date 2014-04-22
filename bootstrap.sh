@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 # Install (or update if exists) oh-my-zsh
 if [ ! -e ~/.oh-my-zsh ]; then
 	echo "Oh-my-zsh does not exist. Cloning repo..."
@@ -32,4 +30,14 @@ if [ ! -h ~/.zshrc ]; then
 else
         echo .zshrc is a link. Nothing to do.
 fi
+
+
+if [ ! -h ~/.vimrc ]; then
+    echo .vimrc is not a link. Deleting and linking to repo...
+    rm -rf ~/.vimrc
+    ln -s ~/.dotfiles/vimrc ~/.vimrc
+else
+    echo .vimrc is a link. Nothing to do.
+fi
+
 
