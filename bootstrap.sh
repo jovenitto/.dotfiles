@@ -8,7 +8,7 @@ if [ ! -e ~/.oh-my-zsh ]; then
 else
 	echo \ --\> Pulling oh-my-zsh
  	cd ~/.oh-my-zsh
-	git pull &> /dev/null
+	git pull &> /dev/null &
 	cd ~
 fi
 
@@ -19,7 +19,7 @@ if [ ! -e ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
 else
     echo \ --\> Pulling zsh-syntax-highlighting plugin
     cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-	git pull &> /dev/null
+	git pull &> /dev/null &
 	cd ~
 fi
 
