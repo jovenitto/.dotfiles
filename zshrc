@@ -1,4 +1,13 @@
 echo
+echo Setting up the environment.
+echo Checking repos...
+
+echo \ --\> Pulling .dotfiles
+#update .dotfiles (git pull)
+cd ~/.dotfiles
+git pull &> /dev/null
+cd ~
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 

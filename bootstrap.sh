@@ -1,14 +1,5 @@
 #!/bin/bash
 
-echo Setting up the environment.
-echo Checking repos...
-
-echo \ --\> Pulling .dotfiles
-#update .dotfiles (git pull)
-cd ~/.dotfiles
-git pull &> /dev/null
-cd ~
-
 # Install (or update if exists) oh-my-zsh
 if [ ! -e ~/.oh-my-zsh ]; then
 	echo \ --\> Cloning oh-my-zsh
