@@ -158,4 +158,6 @@ cd .dotfiles
 gl &> /dev/null
 cd ~
 echo Pulling git repo ".dotfiles"
+echo
+~/.dotfiles/bootstrap.sh
 #
