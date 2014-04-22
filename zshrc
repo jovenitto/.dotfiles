@@ -1,3 +1,4 @@
+echo
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -156,5 +157,5 @@ cd ~
 cd .dotfiles
 gl &> /dev/null
 cd ~
-echo Pulling .dotfiles
+echo Pulling git repo ".dotfiles"
 #

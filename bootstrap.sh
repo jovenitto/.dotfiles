@@ -40,7 +40,7 @@ done
 echo Checking environment addons...
 
 if [ ! -e ~/.cache/zsh/dirs ]; then
-    echo "\ --\> Configuring DirStack."
+    echo \ --\> Configuring DirStack.
     cd ~
     mkdir -p ~/.cache/zsh
     touch ~/.cache/zsh/dirs
