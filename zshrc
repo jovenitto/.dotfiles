@@ -152,12 +152,5 @@ else
     ZSH_THEME_GIT_PROMPT_UNTRACKED=" ✭"
 fi
 
-#update .dotfiles (git pull)
-cd ~
-cd .dotfiles
-gl &> /dev/null
-cd ~
-echo Pulling git repo ".dotfiles"
-echo
 ~/.dotfiles/bootstrap.sh
 #
