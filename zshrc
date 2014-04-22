@@ -103,8 +103,19 @@ setopt pushdminus
 # jovenitto.zsh-theme
 
 if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
-    PROMPT='
-%{$fg[yellow]%}[%{$reset_color%}%n@%m%{$fg[yellow]%}]%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}%~%{$reset_color%} %# ' 
+
+#    user_host="%(%m=bullfrog.%{$fg[green]%}✔%{$reset_color%}.%{$fg[red]%}%? ✗%{$reset_color%})"
+    if [[ ${(%):-%m} = *bullfrog* ]]; then
+        PROMPT='
+%{$fg[yellow]%}[%{$reset_color%}%n@%m%{$fg[yellow]%}]%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}%~%{$reset_color%} %# '
+    else
+        PROMPT='
+%{$fg[yellow]%}[%{$reset_color%}%n@%{$fg[red]%}%m%{$reset_color%}%{$fg[yellow]%}]%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}%~%{$reset_color%} %# '
+    fi
+
+
+#PROMPT='
+# %{$fg[yellow]%}[%{$reset_color%}%n@%m%{$fg[yellow]%}]%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}%~%{$reset_color%} %# ' 
 
     ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[green]%}"
     ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
