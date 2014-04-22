@@ -11,6 +11,8 @@ else
 	git pull
 	cd ~
 fi
+echo "Done."
+
 
 # Install (or update if exists) zsh.syntax-highlighting
 if [ ! -e ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
@@ -22,6 +24,10 @@ else
 	git pull
 	cd ~
 fi
+echo "Done."
+
+
+# simlink files
 
 if [ ! -h ~/.zshrc ]; then
         echo .zshrc is not a link. Deleting and linking to repo...
@@ -30,7 +36,7 @@ if [ ! -h ~/.zshrc ]; then
 else
         echo .zshrc is a link. Nothing to do.
 fi
-
+echo "Done."
 
 if [ ! -h ~/.vimrc ]; then
     echo .vimrc is not a link. Deleting and linking to repo...
@@ -39,5 +45,6 @@ if [ ! -h ~/.vimrc ]; then
 else
     echo .vimrc is a link. Nothing to do.
 fi
+echo "Done."
 
 
