@@ -1,9 +1,8 @@
 echo
 echo Setting up the environment.
-echo Checking repos...
+echo Synchronizing .dotfiles...
 
 #update .dotfiles (git pull)
-echo \ --\> Pulling .dotfiles
 cd ~/.dotfiles
 git pull > /dev/null 
 cd ~

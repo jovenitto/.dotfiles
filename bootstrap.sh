@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo Checking repos...
 # Install (or update if exists) oh-my-zsh
 if [ ! -e ~/.oh-my-zsh ]; then
 	echo \ --\> Cloning oh-my-zsh
