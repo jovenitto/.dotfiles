@@ -1,3 +1,5 @@
+export EDITOR="vim"
+
 echo
 echo Setting up the environment.
 echo Synchronizing .dotfiles...
