@@ -120,18 +120,18 @@ if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
 
 
 # display exitcode on the right when >0
-    return_code="%(?.%{$fg[green]%}✔%{$reset_color%}.%{$fg[red]%}%? ✗%{$reset_color%})"
+    return_code="%(?.%{$fg[green]%}✔%{$reset_color%}.%{$fg[red]%}✗ %?%{$reset_color%})"
     
 
 #    user_host="%(%m=bullfrog.%{$fg[green]%}✔%{$reset_color%}.%{$fg[red]%}%? ✗%{$reset_color%})"
     if [[ ${(%):-%m} = *bullfrog* ]]; then
         PROMPT='
 [ ${return_code} ]
-%{$fg[yellow]%}[%{$reset_color%}%n@%m%{$fg[yellow]%}]%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}%~%{$reset_color%} %# '
+%{$fg[yellow]%}[%{$reset_color%}%n@%m%{$fg[yellow]%}]%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%} %# '
     else
         PROMPT='
 [ ${return_code} ]
-%{$fg[magenta]%}[%n@%m]%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}%~%{$reset_color%} %# '
+%{$fg[magenta]%}[%n@%m]%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%} %# '
     fi
 
     ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[green]%}"
@@ -139,10 +139,7 @@ if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
     ZSH_THEME_GIT_PROMPT_DIRTY=""
     ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-    # display exitcode on the right when >0
-    return_code="%(?.%{$fg[green]%}✔%{$reset_color%}.%{$fg[red]%}%? ✗%{$reset_color%})"
-
-    RPROMPT='$(git_prompt_status)%{$reset_color%}%{$fg[blue]%} [ ⌚ %* ]%{$reset_color%}'
+    RPROMPT='$(git_prompt_status) $(git_prompt_info)%{$reset_color%} %{$fg[blue]%}[ ⌚ %*%  ]%{$reset_color%}'
 
     ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} ✚"
     ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%} ✹"
