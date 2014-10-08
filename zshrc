@@ -130,7 +130,7 @@ if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
 %{$fg[yellow]%}[%{$reset_color%}%n@%m%{$fg[yellow]%}]%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%} %# '
     else
         PROMPT='
-[ ${return_code} ] $(printf "\\u2500%.0s" $(seq 22 $(tput cols))) [%{$fg[blue]%} ⌚ %*%  %{$reset_color%}] 
+[ ${return_code} ] $(printf "\\u2500%.0s" $(seq 23 $(tput cols))) [%{$fg[blue]%} ⌚ %*%  %{$reset_color%}] 
 %{$fg[magenta]%}[%n@%m]%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%} %# '
     fi
 
