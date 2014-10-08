@@ -126,7 +126,7 @@ if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
 #    user_host="%(%m=bullfrog.%{$fg[green]%}✔%{$reset_color%}.%{$fg[red]%}%? ✗i%{$reset_color%})"
     if [[ ${(%):-%m} = *bullfrog* ]]; then
         PROMPT='
-[ ${return_code} ] $(printf "\\u2500%.0s" $(seq 22 $(tput cols))) [%{$fg[blue]%} ⌚ %*%  %{$reset_color%}]
+[ ${return_code} ] $(printf "\\u2500%.0s" $(seq 23 $(tput cols))) [%{$fg[blue]%} ⌚ %*%  %{$reset_color%}]
 %{$fg[yellow]%}[%{$reset_color%}%n@%m%{$fg[yellow]%}]%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%} %# '
     else
         PROMPT='
