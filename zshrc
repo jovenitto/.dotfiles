@@ -124,11 +124,17 @@ if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
     
 
 #    user_host="%(%m=bullfrog.%{$fg[green]%}✔%{$reset_color%}.%{$fg[red]%}%? ✗i%{$reset_color%})"
-    if [[ ${(%):-%m} = *bullfrog* ]]; then
+    if [[ ${(%):-%m} = *bullfrog* ]]; then  #on my workstation
+        if [[ ${(%):-%n} = *root* ]]; then  #on my workstation as root
+                PROMPT='
+%{$fg[blue]%}[ ⌚ %*%  ]%{$reset_color%} ${return_code}
+%{$fg[red]%}[%n@%m]%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%} %{$fg[red]%}%#%{$reset_color%} '
+        else                                #on my workstation as normal user
         PROMPT='
 %{$fg[blue]%}[ ⌚ %*%  ]%{$reset_color%} ${return_code}
 %{$fg[yellow]%}[%{$reset_color%}%n@%m%{$fg[yellow]%}]%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%} %# '
-    else
+        fi
+    else                                    #on remote workstation
         PROMPT='
 %{$fg[blue]%}[ ⌚ %*%  ]%{$reset_color%} ${return_code}
 %{$fg[magenta]%}[%n@%m]%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%} %# '
