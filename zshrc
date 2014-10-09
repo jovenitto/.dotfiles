@@ -120,17 +120,17 @@ if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
 
 
 # display exitcode on the right when >0
-    return_code="%(?.%{$fg[green]%}✔%{$reset_color%}.%{$fg[red]%}✗%{$reset_color%})"
+    return_code="%(?.%{$fg[green]%}[✔]%{$reset_color%}.%{$fg[red]%}[✗]%{$reset_color%})"
     
 
 #    user_host="%(%m=bullfrog.%{$fg[green]%}✔%{$reset_color%}.%{$fg[red]%}%? ✗i%{$reset_color%})"
     if [[ ${(%):-%m} = *bullfrog* ]]; then
         PROMPT='
-[ ${return_code} ] $(printf "\\u2500%.0s" $(seq 23 $(tput cols))) [%{$fg[blue]%} ⌚ %*%  %{$reset_color%}]
+%{$fg[blue]%}[ ⌚ %*%  ]%{$reset_color%} ${return_code}
 %{$fg[yellow]%}[%{$reset_color%}%n@%m%{$fg[yellow]%}]%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%} %# '
     else
         PROMPT='
-[ ${return_code} ] $(printf "\\u2500%.0s" $(seq 23 $(tput cols))) [%{$fg[blue]%} ⌚ %*%  %{$reset_color%}] 
+%{$fg[blue]%}[ ⌚ %*%  ]%{$reset_color%} ${return_code}
 %{$fg[magenta]%}[%n@%m]%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%} %# '
     fi
 
