@@ -182,12 +182,12 @@ fi
 alias cl='ack --passthru'
 
 if [ -f /etc/debian_version ]; then
-    dpkg -s ack-grep 2>/dev/null >/dev/null || sudo apt-get -y install ack-grep
+    dpkg -s ack-grep 2>/dev/null >/dev/null || echo "Installing ack-grep..." && sudo apt-get -y install ack-grep
     alias cl='ack-grep --passthru'
 fi
 
 if [ -f /etc/centos-release ]; then
-    yum -y install ack-grep
+    echo "Installing ack-grep..." && yum -y install ack-grep
     alias cl='ack-grep --passthru'
 fi
 
