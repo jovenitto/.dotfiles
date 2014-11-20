@@ -177,3 +177,17 @@ fi
 
 ~/.dotfiles/bootstrap.sh
 #
+#
+# ACK (Arch) or ACK-GREP for Debian/CentOS
+alias cl='ack --passthru'
+
+if [ -f /etc/debian_version ]; then
+    dpkg -s ack-grep 2>/dev/null >/dev/null || sudo apt-get -y install ack-grep
+    alias cl='ack-grep --passthru'
+fi
+
+if [ -f /etc/centos-release ]; then
+    yum -y install ack-grep
+    alias cl='ack-grep --passthru'
+fi
+
