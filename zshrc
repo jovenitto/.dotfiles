@@ -179,15 +179,13 @@ fi
 #
 #
 # ACK (Arch) or ACK-GREP for Debian/CentOS
-alias cl='ack --passthru'
+alias cl='ack --passthru --color-match=green'
 
 if [ -f /etc/debian_version ]; then
-    dpkg -s ack-grep 2>/dev/null >/dev/null || (echo "Installing ack-grep..." && sudo apt-get -y install ack-grep)
-    alias cl='ack-grep --passthru'
+    alias cl='ack-grep --passthru --color-match=green'
 fi
 
 if [ -f /etc/centos-release ]; then
-    echo "Installing ack-grep..." && yum -y install ack-grep
-    alias cl='ack-grep --passthru'
+    alias cl='ack-grep --passthru --color-match=green'
 fi
 
